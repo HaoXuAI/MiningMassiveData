@@ -1,0 +1,13 @@
+# Created by .ignore support plugin (hsz.mobi)
+.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+combiner/combiner.iml
+counters/counters.iml
+createsequencefile/createsequencefile.iml
+partitioner/partitioner.iml
+writables/writables.iml
+counters/access_log.gz
+partitioner/access_log.gz
+createsequencefile/access_log.gz
