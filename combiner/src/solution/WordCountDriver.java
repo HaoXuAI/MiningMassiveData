@@ -47,7 +47,7 @@ public class WordCountDriver extends Configured implements Tool {
     if (job.getCombinerClass() == null) {
       throw new Exception("Combiner not set");
     }
-
+    System.out.print(job.toString());
     boolean success = job.waitForCompletion(true);
     return success ? 0 : 1;
   }

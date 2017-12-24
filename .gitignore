@@ -11,3 +11,4 @@ writables/writables.iml
 counters/access_log.gz
 partitioner/access_log.gz
 createsequencefile/access_log.gz
+.DS_Store
