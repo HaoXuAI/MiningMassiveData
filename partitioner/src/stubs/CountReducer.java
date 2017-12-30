@@ -15,5 +15,11 @@ public class CountReducer extends Reducer<Text, Text, Text, IntWritable> {
 	  /*
 	   * TODO: implement
 	   */
+
+      int count = 0;
+      for (Text value : values) {
+          count++;
+      }
+      context.write(key, new IntWritable(count));
   }
 }

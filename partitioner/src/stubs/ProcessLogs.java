@@ -35,9 +35,10 @@ public class ProcessLogs {
     /* 
      * TODO: implement (reducers and partitioner)
      */
-    
 
-    
+    job.setPartitionerClass(MonthPartitioner.class);
+    job.setNumReduceTasks(12);
+
     boolean success = job.waitForCompletion(true);
     System.exit(success ? 0 : 1);
   }

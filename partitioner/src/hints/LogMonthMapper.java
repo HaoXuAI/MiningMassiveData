@@ -33,6 +33,5 @@ public class LogMonthMapper extends Mapper<LongWritable, Text, Text, IntWritable
        * TODO: Emit the the IP address as the key
        * and the month as the value.
        */
-
     }
 }

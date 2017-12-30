@@ -41,6 +41,7 @@ public class WordCountDriver extends Configured implements Tool {
      * TODO: Specify the combiner class.
      */
 
+    job.setCombinerClass(SumReducer.class);
     job.setOutputKeyClass(Text.class);
     job.setOutputValueClass(IntWritable.class);
 

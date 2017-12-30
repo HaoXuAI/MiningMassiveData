@@ -1,11 +1,17 @@
 package stubs;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 
 public class LogMonthMapper extends Mapper<LongWritable, Text, Text, Text> {
+
+    public static List<String> months = Arrays.asList("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 
   /**
    * Example input line:
@@ -17,6 +23,17 @@ public class LogMonthMapper extends Mapper<LongWritable, Text, Text, Text> {
       throws IOException, InterruptedException {
     
 	  /* TODO: implement */
-	  
+      String line = value.toString();
+      String[] arr = line.split(" ");
+      if (arr.length > 3) {
+          String ip = arr[0];
+          String[] date = arr[3].split("/");
+          if (date.length > 1) {
+              String month = date[1];
+              if (months.contains(month)) {
+                  context.write(new Text(ip), new Text(month));
+              }
+          }
+      }
   }
 }
